@@ -32,24 +32,24 @@
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Spacing */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-2xl: 48px;
-  --space-3xl: 64px;
-  --space-4xl: 96px;
+  /* Spacing - Compact */
+  --space-xs: 2px;
+  --space-sm: 6px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
 
   /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 300ms ease;
-  --transition-slow: 500ms ease;
+  --transition-fast: 100ms ease;
+  --transition-base: 150ms ease;
+  --transition-slow: 200ms ease;
 
   /* Layout */
-  --max-width: 720px;
-  --nav-height: 60px;
+  --max-width: 680px;
+  --nav-height: 50px;
 }
 
 /* ---------- Base Styles ---------- */
@@ -80,15 +80,15 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-size: clamp(2rem, 6vw, 2.5rem);
 }
 
 h2 {
-  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  font-size: clamp(1.125rem, 3vw, 1.25rem);
 }
 
 h3 {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 p {
@@ -115,13 +115,13 @@ a:hover {
 }
 
 main {
-  padding-top: 140px !important;
+  padding-top: 100px !important;
   /* Ensure content is below fixed navbar */
-  padding-bottom: 96px;
+  padding-bottom: 48px;
 }
 
 section {
-  margin-bottom: var(--space-4xl);
+  margin-bottom: var(--space-2xl);
 }
 
 /* ---------- Navigation ---------- */
@@ -145,8 +145,21 @@ nav {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: var(--space-xl);
+}
+
+.nav-brand {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-right: auto;
+  padding: var(--space-sm) 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-brand:hover {
+  color: var(--text-secondary);
 }
 
 .nav-link {
@@ -236,6 +249,43 @@ nav {
 .social-link:hover {
   color: var(--text-primary);
   border-color: var(--text-primary);
+}
+
+/* CTA Buttons - Boxed social links */
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  transition: all var(--transition-fast);
+}
+
+.cta-button:hover {
+  background: var(--bg-hover);
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.cta-button-icon {
+  font-size: 0.75rem;
+}
+
+.cta-text {
+  color: var(--text-muted);
+  font-size: 0.75rem;
 }
 
 /* ---------- Section Headers ---------- */
@@ -728,17 +778,17 @@ footer {
 
 .achievement-card {
   position: relative;
-  padding: var(--space-xl);
+  padding: var(--space-md);
   background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
   transition: all var(--transition-base);
   overflow: hidden;
+  max-width: 500px;
 }
 
 .achievement-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-color: var(--text-muted);
 }
 
 /* Gold border for 1st place */
@@ -834,9 +884,29 @@ footer {
 .techstack-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-  margin-bottom: var(--space-3xl);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* Compact home page tech stack */
+.techstack-home {
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.techstack-home .techstack-card {
+  padding: var(--space-md);
+}
+
+.techstack-home .techstack-card-header {
+  margin-bottom: var(--space-sm);
+  font-size: 0.8125rem;
+}
+
+.techstack-home .tech-pill {
+  padding: 4px 8px;
+  font-size: 0.6875rem;
 }
 
 .techstack-card {
