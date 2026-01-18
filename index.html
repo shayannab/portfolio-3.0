@@ -31,6 +31,7 @@
     <div class="nav-container">
       <a href="index.html" class="nav-link">About</a>
       <a href="projects.html" class="nav-link">Projects</a>
+      <a href="techstack.html" class="nav-link">Tech Stack</a>
       <a href="fun.html" class="nav-link">Fun</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
@@ -76,6 +77,20 @@
 
       <div class="experience-item">
         <div class="experience-header">
+          <h3 class="experience-company">Brabima</h3>
+          <div class="experience-meta">
+            <span class="experience-tag">Startup</span>
+            <span>Present</span>
+          </div>
+        </div>
+        <p class="experience-role">Role TBD</p>
+        <ul class="experience-details">
+          <li>Details coming soon...</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
           <h3 class="experience-company">Freelance Developer</h3>
           <div class="experience-meta">
             <span class="experience-tag">Remote</span>
@@ -92,10 +107,84 @@
           Tech Stack: <span>React, Node.js, Python, TypeScript, GSAP, Tailwind CSS</span>
         </p>
       </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3 class="experience-company">Internship</h3>
+          <div class="experience-meta">
+            <span class="experience-tag">TBD</span>
+            <span>TBD</span>
+          </div>
+        </div>
+        <p class="experience-role">Role TBD</p>
+        <ul class="experience-details">
+          <li>Details coming soon...</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements fade-in stagger-3">
+      <div class="section-header">achievements</div>
+
+      <div class="achievements-list">
+        <!-- Build on Aptos Delhi Hackathon - 1st Place -->
+        <div class="achievement-card gold">
+          <div class="achievement-ribbon">1ST</div>
+          <div class="achievement-header">
+            <div>
+              <h3 class="achievement-title">Build on Aptos Delhi Hackathon</h3>
+            </div>
+            <span class="achievement-date">Sep 2024</span>
+          </div>
+          <p class="achievement-description">
+            Won first prize for developing Aptex Wallet, a comprehensive Web3 payment ecosystem on the Aptos blockchain.
+          </p>
+          <div class="achievement-prize">
+            <span class="achievement-prize-icon">💰</span>
+            $2400 USD
+          </div>
+        </div>
+
+        <!-- Aptos Ctrl+Move Hackathon -->
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div>
+              <h3 class="achievement-title">Aptos Ctrl+Move Hackathon</h3>
+            </div>
+            <span class="achievement-date">Oct 2025</span>
+          </div>
+          <p class="achievement-description">
+            Won prize for developing Aptex Wallet in the global online hackathon.
+          </p>
+          <div class="achievement-prize">
+            <span class="achievement-prize-icon">💰</span>
+            $500 USD
+          </div>
+        </div>
+
+        <!-- Arbitrum RollUp Hack '25 - 2nd Place -->
+        <div class="achievement-card silver">
+          <div class="achievement-ribbon silver">2ND</div>
+          <div class="achievement-header">
+            <div>
+              <h3 class="achievement-title">Arbitrum RollUp Hack '25</h3>
+            </div>
+            <span class="achievement-date">Nov 2024</span>
+          </div>
+          <p class="achievement-description">
+            Won second prize for developing BlockOps, an automation tool for Blockchain and DeFi.
+          </p>
+          <div class="achievement-prize">
+            <span class="achievement-prize-icon">💰</span>
+            $1000 USD
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects fade-in stagger-3">
+    <section class="projects fade-in stagger-4">
       <div class="section-header">Things I've Built</div>
 
       <div class="projects-grid">
@@ -162,7 +251,7 @@
     </section>
 
     <!-- Contact CTA Section -->
-    <section class="contact-cta fade-in stagger-4">
+    <section class="contact-cta fade-in stagger-5">
       <div class="section-header">Looking for a Developer? Let's Talk.</div>
       <p class="mt-lg">
         Think I'm the right fit? Let's make it official — <a href="contact.html">get in touch</a>.
@@ -190,6 +279,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- Visitor Counter Widget -->
+  <div class="visitor-counter" id="visitor-counter">
+    <span class="visitor-icon">👁️</span>
+    <span class="visitor-count" id="visitor-count">---</span>
+    <span class="visitor-label">visitors</span>
+  </div>
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
