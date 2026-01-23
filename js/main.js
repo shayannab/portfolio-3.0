@@ -239,7 +239,7 @@ function initVisitorCounter() {
     sessionStorage.setItem('portfolio_session_counted', 'true');
   }
 
-  // Animate the counter
+  // Animate the counter with # prefix
   animateCounter(countElement, totalVisitors);
 }
 
@@ -256,6 +256,6 @@ function animateCounter(element, target) {
       current = target;
       clearInterval(timer);
     }
-    element.textContent = Math.floor(current).toLocaleString();
+    element.textContent = '#' + Math.floor(current).toLocaleString();
   }, stepDuration);
 }

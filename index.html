@@ -18,22 +18,20 @@
     rel="stylesheet">
 
   <!-- Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="css/style.css?v=3">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+  <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
 <body>
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
-      <a href="index.html" class="nav-brand">shayanna /&gt;</a>
+      <a href="index.html" class="nav-brand"><img src="img/favicon.png" alt="Shayanna" class="nav-logo"></a>
       <a href="index.html" class="nav-link">About</a>
       <a href="projects.html" class="nav-link">Projects</a>
-      <a href="skills.html" class="nav-link">Skills</a>
-      <a href="fun.html" class="nav-link">Fun</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
@@ -43,41 +41,34 @@
     <section class="hero fade-in stagger-1">
       <h1 class="hero-name">Hi, I'm Shayanna</h1>
 
-      <div class="hero-subtitle">
-        <span>full-stack</span>
-        <span>AI/ML</span>
-        <span>design</span>
-      </div>
-
       <p class="hero-bio">
-        I build products and understand how to grow them. From full-stack development to AI/ML projects, I focus on
-        creating solutions that users actually need. Open to dev, product, and marketing roles.
+        I build stuff that works. <span class="highlight-tag">Full-stack</span> dev with a thing for <span
+          class="highlight-tag">AI/ML</span>. I'm all about making products people actually want to use.
       </p>
 
       <p class="hero-availability">
-        Available for freelance or full-time roles.
+        Down for dev, or product roles—freelance or full-time.
       </p>
 
       <div class="cta-buttons">
+        <span class="cta-text">Hit me up on</span>
         <a href="https://x.com/shayanna_0" target="_blank" class="cta-button">
           <span class="cta-button-icon">𝕏</span> DMs
         </a>
-        <span class="cta-text">or</span>
+        <span class="cta-text">or shoot me an</span>
         <a href="mailto:shayannabehera@gmail.com" class="cta-button">
           <span class="cta-button-icon">✉</span> Email
         </a>
-        <span class="cta-text">me.</span>
       </div>
 
-      <div class="social-links">
-        <a href="https://github.com/shayannab" target="_blank" class="social-link">GitHub</a>
-        <span class="text-muted">,</span>
-        <a href="https://linkedin.com/in/shayanna-behera-804902308" target="_blank" class="social-link">LinkedIn</a>
-        <span class="text-muted">,</span>
+      <div class="cta-buttons">
+        <a href="https://github.com/shayannab" target="_blank" class="cta-button">GitHub</a>
+        <span class="cta-text">,</span>
+        <a href="https://linkedin.com/in/shayanna-behera-804902308" target="_blank" class="cta-button">LinkedIn</a>
+        <span class="cta-text">, and</span>
         <a href="https://www.shayanna.tech/assets/Resume-Shayanna%20Behera.pdf" target="_blank"
-          class="social-link">Resume</a>
-        <span class="text-muted">?</span>
-        <span class="text-muted">Yep, they're all unlocked if you're curious.</span>
+          class="cta-button">Resume</a>
+        <span class="cta-text">are all linked if you want to dig deeper.</span>
       </div>
     </section>
 
@@ -87,237 +78,162 @@
 
       <div class="experience-item">
         <div class="experience-header">
-          <h3 class="experience-company">Brabima</h3>
+          <h3 class="experience-company">Brabima <span class="experience-tag">Remote</span></h3>
           <div class="experience-meta">
-            <span class="experience-tag">Startup</span>
-            <span>Present</span>
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="vertical-align: -2px; margin-right: 4px;">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>Upcoming</span>
           </div>
         </div>
-        <p class="experience-role">Role TBD</p>
+        <p class="experience-role">Upcoming SDE Intern</p>
         <ul class="experience-details">
           <li>Details coming soon...</li>
         </ul>
       </div>
+      </div>
+      <!-- Projects Section -->
+      <section class="projects fade-in stagger-3" style="margin-top: 48px;">
+        <div class="section-header">Recent Works</div>
 
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-company">Freelance Developer</h3>
-          <div class="experience-meta">
-            <span class="experience-tag">Remote</span>
-            <span>2024 - Present</span>
+        <div class="projects-grid">
+          <!-- Project 1: Promptory -->
+          <div class="project-card">
+            <div class="project-image">
+              <div
+                style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;color:#a3a3a3;font-size:0.875rem;">
+                Promptory</div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Promptory</h3>
+                <div class="project-links">
+                  <a href="#" class="project-link">Live</a>
+                  <a href="#" class="project-link">GitHub</a>
+                </div>
+              </div>
+              <p class="project-description">
+                An AI-powered personal prompt library that helps you organize, search, and manage your prompts
+                efficiently
+                with smart categorization.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">GrokAI API</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">Tailwind</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Zyla -->
+          <div class="project-card">
+            <div class="project-image">
+              <div
+                style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a,#2d2d2d);display:flex;align-items:center;justify-content:center;color:#a3a3a3;font-size:0.875rem;">
+                Zyla</div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Zyla</h3>
+                <div class="project-links">
+                  <a href="#" class="project-link">Live</a>
+                  <a href="#" class="project-link">GitHub</a>
+                </div>
+              </div>
+              <p class="project-description">
+                A secure banking application featuring real-time transactions, fraud detection algorithms, and a sleek
+                user dashboard.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Neon DB</span>
+                <span class="tech-tag">Prisma</span>
+                <span class="tech-tag">Stripe</span>
+              </div>
+            </div>
           </div>
         </div>
-        <p class="experience-role">Full Stack Developer & Designer</p>
-        <ul class="experience-details">
-          <li>Built custom web applications for clients across various industries</li>
-          <li>Designed and implemented AI-powered features and ML models</li>
-          <li>Created beautiful, responsive interfaces with modern animations</li>
-        </ul>
-        <p class="tech-stack">
-          Tech Stack: <span>React, Node.js, Python, TypeScript, GSAP, Tailwind CSS</span>
+
+        <a href="projects.html" class="view-all">View all projects</a>
+      </section>
+
+      <!-- Skills & Tools Section -->
+      <section class="fade-in stagger-4">
+        <div class="section-header">skills & tools</div>
+
+        <div class="techstack-grid techstack-home">
+          <!-- Languages -->
+          <div class="techstack-card">
+            <div class="techstack-card-header">languages</div>
+            <div class="tech-pills">
+              <span class="tech-pill"><i class="devicon-python-plain"></i>Python</span>
+              <span class="tech-pill"><i class="devicon-javascript-plain"></i>JavaScript</span>
+              <span class="tech-pill"><i class="devicon-typescript-plain"></i>TypeScript</span>
+              <span class="tech-pill"><i class="devicon-c-plain"></i>C</span>
+              <span class="tech-pill"><i class="devicon-java-plain"></i>Java</span>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="techstack-card">
+            <div class="techstack-card-header">frontend</div>
+            <div class="tech-pills">
+              <span class="tech-pill"><i class="devicon-html5-plain"></i>HTML5</span>
+              <span class="tech-pill"><i class="devicon-css3-plain"></i>CSS3</span>
+              <span class="tech-pill"><i class="devicon-react-original"></i>React.js</span>
+              <span class="tech-pill"><i class="devicon-tailwindcss-original"></i>Tailwind CSS</span>
+              <span class="tech-pill"><i class="devicon-bootstrap-plain"></i>Bootstrap</span>
+              <span class="tech-pill"><i class="devicon-greensock-plain"></i>GSAP</span>
+              <span class="tech-pill"><i class="devicon-framermotion-original"></i>Framer Motion</span>
+              <span class="tech-pill"><i class="devicon-threedsmax-plain"></i>Spline</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="techstack-card">
+            <div class="techstack-card-header">backend</div>
+            <div class="tech-pills">
+              <span class="tech-pill"><i class="devicon-supabase-plain"></i>Supabase</span>
+              <span class="tech-pill"><i class="devicon-postgresql-plain"></i>Neon</span>
+              <span class="tech-pill"><i class="devicon-prisma-original"></i>Prisma</span>
+              <span class="tech-pill"><i class="devicon-numpy-plain"></i>NumPy</span>
+              <span class="tech-pill"><i class="devicon-pandas-plain"></i>Pandas</span>
+              <span class="tech-pill"><i class="devicon-matplotlib-plain"></i>Matplotlib</span>
+              <span class="tech-pill"><i class="devicon-scikitlearn-plain"></i>Scikit-Learn</span>
+            </div>
+          </div>
+
+          <!-- Tools & DevOps -->
+          <div class="techstack-card">
+            <div class="techstack-card-header">tools & devops</div>
+            <div class="tech-pills">
+              <span class="tech-pill"><i class="devicon-git-plain"></i>Git</span>
+              <span class="tech-pill"><i class="devicon-github-original"></i>GitHub</span>
+              <span class="tech-pill"><i class="devicon-vercel-original"></i>Vercel</span>
+              <span class="tech-pill"><i class="devicon-postman-plain"></i>Postman</span>
+              <span class="tech-pill"><i class="devicon-google-plain"></i>Grok AI</span>
+              <span class="tech-pill"><i class="devicon-stripe-original"></i>Plaid</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="skills.html" class="view-all">View full stack</a>
+      </section>
+
+      <!-- Contact CTA Section -->
+      <section class="contact-cta fade-in stagger-6">
+        <div class="section-header">Looking for a Developer? Let's Talk.</div>
+        <p class="mt-lg">
+          Think I'm the right fit? Let's make it official — <a href="contact.html">get in touch</a>.
         </p>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-company">Internship</h3>
-          <div class="experience-meta">
-            <span class="experience-tag">TBD</span>
-            <span>TBD</span>
-          </div>
-        </div>
-        <p class="experience-role">Role TBD</p>
-        <ul class="experience-details">
-          <li>Details coming soon...</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects fade-in stagger-3">
-      <div class="section-header">Things I've Built</div>
-
-      <div class="projects-grid">
-        <!-- Project 1: Promptory -->
-        <div class="project-card">
-          <div class="project-image">
-            <div
-              style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;color:#a3a3a3;font-size:0.875rem;">
-              Promptory</div>
-          </div>
-          <div class="project-content">
-            <div class="project-header">
-              <h3 class="project-title">Promptory</h3>
-              <div class="project-links">
-                <a href="#" class="project-link">Live</a>
-                <a href="#" class="project-link">GitHub</a>
-              </div>
-            </div>
-            <p class="project-description">
-              An AI-powered personal prompt library that helps you organize, search, and manage your prompts efficiently
-              with smart categorization.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Vite</span>
-              <span class="tech-tag">GrokAI API</span>
-              <span class="tech-tag">Supabase</span>
-              <span class="tech-tag">Tailwind</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2: Zyla -->
-        <div class="project-card">
-          <div class="project-image">
-            <div
-              style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a,#2d2d2d);display:flex;align-items:center;justify-content:center;color:#a3a3a3;font-size:0.875rem;">
-              Zyla</div>
-          </div>
-          <div class="project-content">
-            <div class="project-header">
-              <h3 class="project-title">Zyla</h3>
-              <div class="project-links">
-                <a href="#" class="project-link">Live</a>
-                <a href="#" class="project-link">GitHub</a>
-              </div>
-            </div>
-            <p class="project-description">
-              A secure banking application featuring real-time transactions, fraud detection algorithms, and a sleek
-              user dashboard.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Neon DB</span>
-              <span class="tech-tag">Prisma</span>
-              <span class="tech-tag">Stripe</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <a href="projects.html" class="view-all">View all projects</a>
-    </section>
-
-    <!-- Skills & Tools Section -->
-    <section class="fade-in stagger-4">
-      <div class="section-header">skills & tools</div>
-
-      <div class="techstack-grid techstack-home">
-        <!-- Languages -->
-        <div class="techstack-card">
-          <div class="techstack-card-header">languages</div>
-          <div class="tech-pills">
-            <span class="tech-pill"><span class="pill-icon">🐍</span>Python</span>
-            <span class="tech-pill"><span class="pill-icon">🟨</span>JavaScript</span>
-            <span class="tech-pill"><span class="pill-icon">🔷</span>TypeScript</span>
-            <span class="tech-pill"><span class="pill-icon">🔵</span>C++</span>
-            <span class="tech-pill"><span class="pill-icon">☕</span>Java</span>
-            <span class="tech-pill"><span class="pill-icon">⟠</span>Solidity</span>
-          </div>
-        </div>
-
-        <!-- Frontend -->
-        <div class="techstack-card">
-          <div class="techstack-card-header">frontend</div>
-          <div class="tech-pills">
-            <span class="tech-pill"><span class="pill-icon">⚛️</span>React</span>
-            <span class="tech-pill"><span class="pill-icon">▲</span>Next.js</span>
-            <span class="tech-pill"><span class="pill-icon">💨</span>Tailwind CSS</span>
-            <span class="tech-pill"><span class="pill-icon">🌐</span>HTML/CSS</span>
-          </div>
-        </div>
-
-        <!-- Backend -->
-        <div class="techstack-card">
-          <div class="techstack-card-header">backend</div>
-          <div class="tech-pills">
-            <span class="tech-pill"><span class="pill-icon">🟢</span>Node.js</span>
-            <span class="tech-pill"><span class="pill-icon">🚀</span>Express</span>
-            <span class="tech-pill"><span class="pill-icon">⚡</span>FastAPI</span>
-            <span class="tech-pill"><span class="pill-icon">🐘</span>PostgreSQL</span>
-            <span class="tech-pill"><span class="pill-icon">💚</span>Supabase</span>
-          </div>
-        </div>
-
-        <!-- Blockchain -->
-        <div class="techstack-card">
-          <div class="techstack-card-header">blockchain</div>
-          <div class="tech-pills">
-            <span class="tech-pill"><span class="pill-icon">⟠</span>Ethereum</span>
-            <span class="tech-pill"><span class="pill-icon">🔵</span>Aptos</span>
-            <span class="tech-pill"><span class="pill-icon">🔷</span>Arbitrum</span>
-            <span class="tech-pill"><span class="pill-icon">🌐</span>Web3.js</span>
-          </div>
-        </div>
-      </div>
-
-      <a href="skills.html" class="view-all">View full stack</a>
-    </section>
-
-    <!-- Hackathon Wins Section -->
-    <section class="achievements fade-in stagger-5">
-      <div class="section-header">hackathon wins</div>
-
-      <div class="achievements-list">
-        <!-- Arbitrum RollUp Hack - 2nd Place (TOP) -->
-        <div class="achievement-card silver">
-          <div class="achievement-ribbon silver">2ND</div>
-          <div class="achievement-header">
-            <div>
-              <h3 class="achievement-title">Arbitrum RollUp Hack</h3>
-            </div>
-            <span class="achievement-date">Nov 2025</span>
-          </div>
-          <p class="achievement-description">
-            Won second prize for developing BlockOps, an automation tool for Blockchain and DeFi.
-          </p>
-          <div class="achievement-links">
-            <a href="#" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
-        </div>
-
-        <!-- SIH Internal Round - 1st Place (MIDDLE) -->
-        <div class="achievement-card gold">
-          <div class="achievement-ribbon">1ST</div>
-          <div class="achievement-header">
-            <div>
-              <h3 class="achievement-title">Smart India Hackathon (Internal Round)</h3>
-            </div>
-            <span class="achievement-date">Nov 2025</span>
-          </div>
-          <p class="achievement-description">
-            Won first place in the internal round of Smart India Hackathon, India's largest student-led hackathon.
-          </p>
-        </div>
-
-        <!-- IBM ICE Event - 1st Place (BOTTOM) -->
-        <div class="achievement-card gold">
-          <div class="achievement-ribbon">1ST</div>
-          <div class="achievement-header">
-            <div>
-              <h3 class="achievement-title">IBM ICE Event</h3>
-            </div>
-            <span class="achievement-date">Feb 2025</span>
-          </div>
-          <p class="achievement-description">
-            Won first place at IBM ICE (Innovation Challenge for Engineering) event.
-          </p>
-          <div class="achievement-links">
-            <a href="#" target="_blank" class="project-link">LinkedIn Post ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact CTA Section -->
-    <section class="contact-cta fade-in stagger-6">
-      <div class="section-header">Looking for a Developer? Let's Talk.</div>
-      <p class="mt-lg">
-        Think I'm the right fit? Let's make it official — <a href="contact.html">get in touch</a>.
-      </p>
-    </section>
+      </section>
   </main>
 
   <!-- Footer -->
@@ -330,6 +246,10 @@
         </div>
         <div class="footer-right">
           <div class="footer-stat">
+            <span class="visitor-label">Visitors</span>
+            <span class="visitor-count" id="visitor-count">#---</span>
+          </div>
+          <div class="footer-stat">
             <span class="text-muted">Location:</span>
             <span>India</span>
           </div>
@@ -340,13 +260,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Visitor Counter Widget -->
-  <div class="visitor-counter" id="visitor-counter">
-    <span class="visitor-icon">👁️</span>
-    <span class="visitor-count" id="visitor-count">---</span>
-    <span class="visitor-label">visitors</span>
-  </div>
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
