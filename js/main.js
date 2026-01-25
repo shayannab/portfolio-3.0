@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize GSAP
   gsap.registerPlugin(ScrollTrigger);
 
+  // Initialize theme toggle
+  initThemeToggle();
+
   // Update current time in footer
   updateTime();
   setInterval(updateTime, 1000);
@@ -258,4 +261,46 @@ function animateCounter(element, target) {
     }
     element.textContent = '#' + Math.floor(current).toLocaleString();
   }, stepDuration);
+}
+
+/* ---------- Theme Toggle ---------- */
+function initThemeToggle() {
+  const toggleButton = document.getElementById('theme-toggle');
+  if (!toggleButton) return;
+
+  // Check for saved theme preference, or use system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Set initial theme
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else if (!systemPrefersDark) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+
+  // Toggle theme on button click
+  toggleButton.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    if (newTheme === 'dark') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', newTheme);
+    }
+
+    localStorage.setItem('theme', newTheme);
+  });
+
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      if (e.matches) {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+  });
 }
