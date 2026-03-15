@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize animations
   initScrollAnimations();
   initHoverEffects();
+  initCustomCursor();
+  initPillNav();
+  initMagicText();
 });
 
 /* ---------- Time Display ---------- */
@@ -37,6 +40,22 @@ function updateTime() {
   }
 }
 
+/* ---------- Floating Pill Nav ---------- */
+function initPillNav() {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.style.top = '10px';
+      nav.style.padding = '0 6px';
+    } else {
+      nav.style.top = '20px';
+      nav.style.padding = '0 4px';
+    }
+  });
+}
+
 /* ---------- Scroll Animations ---------- */
 function initScrollAnimations() {
   // Fade in elements on scroll
@@ -51,14 +70,14 @@ function initScrollAnimations() {
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
-        ease: 'power2.out',
+        duration: 0.3,
+        ease: 'power4.out',
         scrollTrigger: {
           trigger: element,
-          start: 'top 85%',
+          start: 'top 98%',
           toggleActions: 'play none none none'
         },
-        delay: index * 0.1
+        delay: index * 0.02
       }
     );
   });
@@ -75,14 +94,14 @@ function initScrollAnimations() {
       {
         opacity: 1,
         y: 0,
-        duration: 0.6,
-        ease: 'power2.out',
+        duration: 0.25,
+        ease: 'power4.out',
         scrollTrigger: {
           trigger: card,
-          start: 'top 85%',
+          start: 'top 98%',
           toggleActions: 'play none none none'
         },
-        delay: index * 0.15
+        delay: index * 0.03
       }
     );
   });
@@ -99,14 +118,14 @@ function initScrollAnimations() {
       {
         opacity: 1,
         x: 0,
-        duration: 0.6,
-        ease: 'power2.out',
+        duration: 0.3,
+        ease: 'power4.out',
         scrollTrigger: {
           trigger: item,
-          start: 'top 85%',
+          start: 'top 98%',
           toggleActions: 'play none none none'
         },
-        delay: index * 0.1
+        delay: index * 0.02
       }
     );
   });
@@ -123,14 +142,14 @@ function initScrollAnimations() {
       {
         opacity: 1,
         x: 0,
-        duration: 0.5,
-        ease: 'power2.out',
+        duration: 0.25,
+        ease: 'power4.out',
         scrollTrigger: {
           trigger: method,
-          start: 'top 90%',
+          start: 'top 98%',
           toggleActions: 'play none none none'
         },
-        delay: index * 0.08
+        delay: index * 0.02
       }
     );
   });
@@ -161,18 +180,17 @@ function initHoverEffects() {
     });
   });
 
-  // Nav link hover enhancement
+  // Nav link hover enhancement (Disabled to prevent flickering with CSS)
+  /*
   const navLinks = document.querySelectorAll('.nav-link');
-
   navLinks.forEach(link => {
     link.addEventListener('mouseenter', () => {
       gsap.to(link, {
-        y: -2,
+        y: -1,
         duration: 0.2,
         ease: 'power2.out'
       });
     });
-
     link.addEventListener('mouseleave', () => {
       gsap.to(link, {
         y: 0,
@@ -180,6 +198,47 @@ function initHoverEffects() {
         ease: 'power2.out'
       });
     });
+  });
+  */
+}
+
+/* ---------- Custom Cursor ---------- */
+function initCustomCursor() {
+  const cursor = document.getElementById('cursor');
+  if (!cursor) return;
+
+  window.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    // Using GSAP for ultra-smooth tracking if available, otherwise fallback to style
+    gsap.to(cursor, {
+      x: clientX,
+      y: clientY,
+      xPercent: -50,
+      yPercent: -50,
+      opacity: 1,
+      duration: 0.1,
+      ease: 'power2.out'
+    });
+  });
+
+  // Track hover states for interactive elements
+  const interactives = document.querySelectorAll('a, button, .project-card, .tech-pill, .cta-button');
+  
+  interactives.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      // Hover effect disabled as requested
+    });
+    el.addEventListener('mouseleave', () => {
+      // Hover effect disabled as requested
+    });
+  });
+
+  // Hide cursor when it leaves window
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
   });
 }
 
@@ -197,14 +256,17 @@ window.addEventListener('load', () => {
   gsap.fromTo(heroElements,
     {
       opacity: 0,
-      y: 30
+      y: 40,
+      filter: 'blur(10px)'
     },
     {
       opacity: 1,
       y: 0,
+      filter: 'blur(0px)',
       duration: 0.8,
-      ease: 'power2.out',
-      stagger: 0.12
+      ease: 'expo.out',
+      stagger: 0.1,
+      delay: 0.1
     }
   );
 });
@@ -301,6 +363,58 @@ function initThemeToggle() {
       } else {
         document.documentElement.setAttribute('data-theme', 'light');
       }
+    }
+  });
+}
+
+/* ---------- Magic Text Reveal (GSAP ScrollTrigger) ---------- */
+function initMagicText() {
+  const container = document.querySelector('.magic-text-container');
+  if (!container) return;
+  
+  const originalNodes = Array.from(container.childNodes);
+  container.innerHTML = '';
+  
+  originalNodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const words = node.textContent.split(/(\s+)/);
+      words.forEach(word => {
+        if (word.trim() === '') {
+          container.appendChild(document.createTextNode(word));
+          return;
+        }
+        
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'magic-word-container';
+        
+        const bgSpan = document.createElement('span');
+        bgSpan.className = 'magic-word-bg';
+        bgSpan.textContent = word;
+        
+        const fgSpan = document.createElement('span');
+        fgSpan.className = 'magic-word-fg';
+        fgSpan.textContent = word;
+        
+        wordSpan.appendChild(bgSpan);
+        wordSpan.appendChild(fgSpan);
+        container.appendChild(wordSpan);
+      });
+    } else {
+      // Preserve <br> or other elements
+      container.appendChild(node.cloneNode(true));
+    }
+  });
+
+  // Create ScrollTrigger to animate fgSpan opacity
+  gsap.to('.magic-word-fg', {
+    opacity: 1,
+    stagger: 0.1,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.about-reveal-section',
+      start: 'top 50%',
+      end: 'bottom 95%',
+      scrub: 0.5,
     }
   });
 }

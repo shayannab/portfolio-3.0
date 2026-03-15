@@ -30,7 +30,7 @@
   <nav>
     <div class="nav-container">
       <a href="index.html" class="nav-brand"><img src="img/favicon.png" alt="Shayanna" class="nav-logo"></a>
-      <a href="index.html" class="nav-link">About</a>
+      <a href="about.html" class="nav-link">About</a>
       <a href="projects.html" class="nav-link">Projects</a>
       <a href="contact.html" class="nav-link">Contact</a>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
@@ -53,6 +53,8 @@
       </button>
     </div>
   </nav>
+
+  <div id="cursor" class="custom-cursor"></div>
 
   <main class="container" style="padding-top: 100px;">
     <!-- Hero Section -->
@@ -138,20 +140,16 @@
         <div class="experience-header">
           <h3 class="experience-company">Brabima <span class="experience-tag">Remote</span></h3>
           <div class="experience-meta">
-            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                style="vertical-align: -2px; margin-right: 4px;">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>Upcoming</span>
+            <span>Jan 2026 – Present</span>
           </div>
         </div>
-        <p class="experience-role">Upcoming SDE Intern</p>
-        <ul class="experience-details">
-          <li>Details coming soon...</li>
-        </ul>
+        <p class="experience-role">Backend Developer Intern</p>
+        <p class="experience-description">
+          Built a full ticketing and query management system end-to-end — backend and frontend. Includes SLA tracking, JWT authentication, role-based access control, and indexed PostgreSQL queries for performance. Shipped the entire feature from database schema to UI.
+        </p>
+        <div class="experience-stack">
+          <strong>Stack:</strong> Node.js · Express · PostgreSQL · React · JWT
+        </div>
       </div>
       </div>
       <!-- Projects Section -->
@@ -159,63 +157,53 @@
         <div class="section-header">Recent Works</div>
 
         <div class="projects-grid">
-          <!-- Project 1: Promptory -->
+          <!-- Project 1: OpsAgent -->
           <div class="project-card">
             <div class="project-image">
-              <div style="width:100%;height:100%;
-                background:linear-gradient(135deg,#1a1a2e,#16213e);
-                display:flex;align-items:center;
-                justify-content:center;color:#a3a3a3;font-size:0.875rem;">
-                Promptory</div>
+              <img src="img/opsagent.png" alt="OpsAgent Dashboard" style="width:100%; height:100%; object-fit: cover;">
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3 class="project-title">Promptory</h3>
+                <h3 class="project-title">OpsAgent</h3>
                 <div class="project-links">
                   <a href="#" class="project-link">Live</a>
                   <a href="#" class="project-link">GitHub</a>
                 </div>
               </div>
               <p class="project-description">
-                An AI-powered personal prompt library that helps you organize, search, and manage your prompts
-                efficiently
-                with smart categorization.
+                AI-powered Kubernetes monitoring and auto-healing platform. Monitors pods in real time, diagnoses failures using Llama 3.3-70B, and triggers auto-healing workflows automatically.
               </p>
               <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Groq</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Kubernetes</span>
                 <span class="tech-tag">React</span>
-                <span class="tech-tag">Vite</span>
-                <span class="tech-tag">GrokAI API</span>
-                <span class="tech-tag">Supabase</span>
-                <span class="tech-tag">Tailwind</span>
               </div>
             </div>
           </div>
 
-          <!-- Project 2: Zyla -->
+          <!-- Project 2: AutoFlow -->
           <div class="project-card">
             <div class="project-image">
-              <div
-                style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a,#2d2d2d);display:flex;align-items:center;justify-content:center;color:#a3a3a3;font-size:0.875rem;">
-                Zyla</div>
+              <img src="img/autoflow.png" alt="AutoFlow Interface" style="width:100%; height:100%; object-fit: cover;">
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3 class="project-title">Zyla</h3>
+                <h3 class="project-title">AutoFlow</h3>
                 <div class="project-links">
                   <a href="#" class="project-link">Live</a>
                   <a href="#" class="project-link">GitHub</a>
                 </div>
               </div>
               <p class="project-description">
-                A secure banking application featuring real-time transactions, fraud detection algorithms, and a sleek
-                user dashboard.
+                n8n-style drag-and-drop WhatsApp automation platform built for Indian MSMEs. Draw your workflow visually, connect it to WhatsApp, let it run. No code required.
               </p>
               <div class="project-tech">
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Neon DB</span>
-                <span class="tech-tag">Prisma</span>
-                <span class="tech-tag">Stripe</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">WhatsApp API</span>
               </div>
             </div>
           </div>
@@ -249,10 +237,6 @@
               <span class="tech-pill"><i class="devicon-css3-plain"></i>CSS3</span>
               <span class="tech-pill"><i class="devicon-react-original"></i>React.js</span>
               <span class="tech-pill"><i class="devicon-tailwindcss-original"></i>Tailwind CSS</span>
-              <span class="tech-pill"><i class="devicon-bootstrap-plain"></i>Bootstrap</span>
-              <span class="tech-pill"><i class="devicon-greensock-plain"></i>GSAP</span>
-              <span class="tech-pill"><i class="devicon-framermotion-original"></i>Framer Motion</span>
-              <span class="tech-pill"><i class="devicon-threedsmax-plain"></i>Spline</span>
             </div>
           </div>
 
@@ -260,13 +244,13 @@
           <div class="techstack-card">
             <div class="techstack-card-header">backend</div>
             <div class="tech-pills">
-              <span class="tech-pill"><i class="devicon-supabase-plain"></i>Supabase</span>
-              <span class="tech-pill"><i class="devicon-postgresql-plain"></i>Neon</span>
+              <span class="tech-pill"><i class="devicon-nodejs-plain"></i>Node.js</span>
+              <span class="tech-pill"><i class="devicon-express-original"></i>Express</span>
+              <span class="tech-pill"><i class="devicon-fastapi-plain"></i>FastAPI</span>
+              <span class="tech-pill"><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
+              <span class="tech-pill"><i class="devicon-mongodb-plain"></i>MongoDB</span>
               <span class="tech-pill"><i class="devicon-prisma-original"></i>Prisma</span>
-              <span class="tech-pill"><i class="devicon-numpy-plain"></i>NumPy</span>
-              <span class="tech-pill"><i class="devicon-pandas-plain"></i>Pandas</span>
-              <span class="tech-pill"><i class="devicon-matplotlib-plain"></i>Matplotlib</span>
-              <span class="tech-pill"><i class="devicon-scikitlearn-plain"></i>Scikit-Learn</span>
+              <span class="tech-pill">REST APIs</span>
             </div>
           </div>
 
@@ -274,25 +258,63 @@
           <div class="techstack-card">
             <div class="techstack-card-header">tools & devops</div>
             <div class="tech-pills">
+              <span class="tech-pill"><i class="devicon-docker-plain"></i>Docker</span>
+              <span class="tech-pill"><i class="devicon-kubernetes-plain"></i>Kubernetes</span>
+              <span class="tech-pill"><i class="devicon-amazonwebservices-original"></i>AWS</span>
               <span class="tech-pill"><i class="devicon-git-plain"></i>Git</span>
               <span class="tech-pill"><i class="devicon-github-original"></i>GitHub</span>
+              <span class="tech-pill"><i class="devicon-githubactions-plain"></i>Actions</span>
               <span class="tech-pill"><i class="devicon-vercel-original"></i>Vercel</span>
               <span class="tech-pill"><i class="devicon-postman-plain"></i>Postman</span>
-              <span class="tech-pill"><i class="devicon-google-plain"></i>Grok AI</span>
-              <span class="tech-pill"><i class="devicon-stripe-original"></i>Plaid</span>
+              <span class="tech-pill"><i class="devicon-linux-plain"></i>Linux</span>
+            </div>
+          </div>
+
+          <!-- AI/ML -->
+          <div class="techstack-card techstack-card-full">
+            <div class="techstack-card-header">AI/ML</div>
+            <div class="tech-pills">
+              <span class="tech-pill"><i class="devicon-python-plain"></i>Groq API</span>
+              <span class="tech-pill">Llama 3.3</span>
+              <span class="tech-pill"><i class="devicon-numpy-plain"></i>NumPy</span>
+              <span class="tech-pill"><i class="devicon-pandas-plain"></i>Pandas</span>
+              <span class="tech-pill"><i class="devicon-scikitlearn-plain"></i>Scikit-Learn</span>
+              <span class="tech-pill"><i class="devicon-matplotlib-plain"></i>Matplotlib</span>
             </div>
           </div>
         </div>
-
-        <a href="skills.html" class="view-all">View full stack</a>
       </section>
 
       <!-- Contact CTA Section -->
-      <section class="contact-cta fade-in stagger-6">
-        <div class="section-header">Looking for a Developer? Let's Talk.</div>
-        <p class="mt-lg">
-          Think I'm the right fit? Let's make it official — <a href="contact.html">get in touch</a>.
-        </p>
+      <section class="contact-cta fade-in stagger-5">
+        <h2 class="cta-dramatic-text">Get in Touch.</h2>
+        
+        <div class="social-dock">
+          <a href="https://github.com/shayannab" target="_blank" class="social-dock-item" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/shayanna-behera-804902308" target="_blank" class="social-dock-item" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="https://x.com/shayanna_0" target="_blank" class="social-dock-item" aria-label="Twitter/X">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4l11.733 16H20L8.267 4z" />
+              <path d="M4 20l6.768-6.768m2.464-2.464L20 4" />
+            </svg>
+          </a>
+          <a href="mailto:shayannabehera@gmail.com" class="social-dock-item" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
       </section>
   </main>
 
