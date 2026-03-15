@@ -23,7 +23,99 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomCursor();
   initPillNav();
   initMagicText();
+  initGitHubCalendar();
+  initActivityStatus();
 });
+
+/* ---------- GitHub Calendar ---------- */
+function initGitHubCalendar() {
+  const container = document.querySelector('.calendar');
+  if (container) {
+    console.log("Initializing GitHub Calendar for shayannab...");
+    
+    // Set a timeout to show error if it takes too long
+    const timeout = setTimeout(() => {
+      if (container.innerText.includes("Loading")) {
+        container.innerHTML = `<p class="text-muted" style="font-size: 0.75rem;">Still loading... GitHub might be slow. <a href="https://github.com/shayannab" target="_blank" style="text-decoration: underline;">View profile</a></p>`;
+      }
+    }, 5000);
+
+    GitHubCalendar(".calendar", "shayannab", {
+      responsive: true,
+      tooltips: true,
+      // Using corsproxy.io for better reliability
+      proxy: (username) => {
+        return fetch(`https://corsproxy.io/?${encodeURIComponent(`https://github.com/users/${username}/contributions`)}`)
+          .then(res => {
+            if (!res.ok) throw new Error("Could not fetch contributions");
+            return res.text();
+          });
+      }
+    }).then(() => {
+      clearTimeout(timeout);
+      console.log("GitHub Calendar loaded successfully.");
+    }).catch(err => {
+      clearTimeout(timeout);
+      console.error("GitHub Calendar Error:", err);
+      container.innerHTML = `<p class="text-muted" style="font-size: 0.75rem;">Could not load live activity. <a href="https://github.com/shayannab" target="_blank" style="text-decoration: underline;">View on GitHub</a></p>`;
+    });
+  }
+}
+
+/* ---------- GitHub Activity Status (Live Events) ---------- */
+async function initActivityStatus() {
+  const statusContainer = document.getElementById('github-status-container');
+  if (!statusContainer) return;
+
+  try {
+    const response = await fetch('https://api.github.com/users/shayannab/events/public');
+    if (!response.ok) throw new Error('Failed to fetch GitHub events');
+    const events = await response.json();
+
+    // Find the latest push or commit-related event
+    const activityEvent = events.find(e => e.type === 'PushEvent' || e.type === 'CreateEvent' || e.type === 'WatchEvent');
+    
+    if (activityEvent) {
+      const repoName = activityEvent.repo.name.split('/')[1] || activityEvent.repo.name;
+      const eventTime = new Date(activityEvent.created_at);
+      const timeAgo = formatTimeAgo(eventTime);
+      
+      let statusText = '';
+      if (activityEvent.type === 'PushEvent') {
+        statusText = `pushed to <b>${repoName}</b>`;
+      } else if (activityEvent.type === 'CreateEvent') {
+        statusText = `created <b>${repoName}</b>`;
+      } else {
+        statusText = `active in <b>${repoName}</b>`;
+      }
+
+      statusContainer.innerHTML = `
+        <div class="status-indicator">
+          <span class="status-pulse"></span>
+          <span class="status-text">${timeAgo} — ${statusText}</span>
+        </div>
+      `;
+    }
+  } catch (err) {
+    console.error('Error fetching activity status:', err);
+    statusContainer.innerHTML = ''; // Hide if failed
+  }
+}
+
+function formatTimeAgo(date) {
+  const seconds = Math.floor((new Date() - date) / 1000);
+  let interval = seconds / 31536000;
+  if (interval > 1) return Math.floor(interval) + "y ago";
+  interval = seconds / 2592000;
+  if (interval > 1) return Math.floor(interval) + "mo ago";
+  interval = seconds / 86400;
+  if (interval > 1) return Math.floor(interval) + "d ago";
+  interval = seconds / 3600;
+  if (interval > 1) return Math.floor(interval) + "h ago";
+  interval = seconds / 60;
+  if (interval > 1) return Math.floor(interval) + "m ago";
+  return "just now";
+}
 
 /* ---------- Time Display ---------- */
 function updateTime() {

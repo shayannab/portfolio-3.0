@@ -19,6 +19,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
   <link rel="stylesheet" href="css/style.css?v=3">
 
   <!-- Favicon -->
@@ -157,59 +158,71 @@
         <div class="section-header">Recent Works</div>
 
         <div class="projects-grid">
-          <!-- Project 1: OpsAgent -->
+          <!-- Project 1: Promptory -->
           <div class="project-card">
             <div class="project-image">
-              <img src="img/opsagent.png" alt="OpsAgent Dashboard" style="width:100%; height:100%; object-fit: cover;">
+              <img src="img/promptory.png" alt="Promptory Dashboard" style="width:100%; height:100%; object-fit: cover;">
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3 class="project-title">OpsAgent</h3>
+                <h3 class="project-title">Promptory</h3>
                 <div class="project-links">
-                  <a href="#" class="project-link">Live</a>
-                  <a href="#" class="project-link">GitHub</a>
+                  <a href="https://promptory-six.vercel.app/" target="_blank" class="project-link">Live</a>
+                  <a href="https://github.com/shayannab/Promptory" target="_blank" class="project-link">GitHub</a>
                 </div>
               </div>
               <p class="project-description">
-                AI-powered Kubernetes monitoring and auto-healing platform. Monitors pods in real time, diagnoses failures using Llama 3.3-70B, and triggers auto-healing workflows automatically.
+                AI-powered personal prompt library. Create, organize, search, and perfect every prompt with smart categorization.
               </p>
               <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">FastAPI</span>
-                <span class="tech-tag">Groq</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Kubernetes</span>
                 <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">GrokAI API</span>
               </div>
             </div>
           </div>
 
-          <!-- Project 2: AutoFlow -->
+          <!-- Project 2: Zyla -->
           <div class="project-card">
             <div class="project-image">
-              <img src="img/autoflow.png" alt="AutoFlow Interface" style="width:100%; height:100%; object-fit: cover;">
+              <img src="img/zyla.png" alt="Zyla Banking Dashboard" style="width:100%; height:100%; object-fit: cover;">
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3 class="project-title">AutoFlow</h3>
+                <h3 class="project-title">Zyla</h3>
                 <div class="project-links">
-                  <a href="#" class="project-link">Live</a>
-                  <a href="#" class="project-link">GitHub</a>
+                  <a href="https://zyla-app.vercel.app/" target="_blank" class="project-link">Live</a>
+                  <a href="https://github.com/shayannab/Zyla" target="_blank" class="project-link">GitHub</a>
                 </div>
               </div>
               <p class="project-description">
-                n8n-style drag-and-drop WhatsApp automation platform built for Indian MSMEs. Draw your workflow visually, connect it to WhatsApp, let it run. No code required.
+                Secure banking application with real-time transactions, fraud detection algorithms, and a financial analytics dashboard.
               </p>
               <div class="project-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">FastAPI</span>
-                <span class="tech-tag">WhatsApp API</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">PostgreSQL</span>
               </div>
             </div>
           </div>
         </div>
 
         <a href="projects.html" class="view-all">View all projects</a>
+      </section>
+
+      <!-- GitHub Activity Section -->
+      <section class="github-activity fade-in stagger-4">
+        <div class="github-activity-header">
+          <div class="section-header">GitHub Activity</div>
+          <div id="github-status-container" class="github-status">
+            <!-- Status will be injected here -->
+          </div>
+        </div>
+        <div class="github-chart-container">
+          <div class="calendar">
+            <span class="loading-text">Loading GitHub Activity...</span>
+          </div>
+        </div>
       </section>
 
       <!-- Skills & Tools Section -->
@@ -346,6 +359,9 @@
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- GitHub Calendar -->
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 
   <!-- Main JS -->
   <script src="js/main.js"></script>

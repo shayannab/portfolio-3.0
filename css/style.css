@@ -605,6 +605,196 @@ nav {
   line-height: 1.6;
 }
 
+/* ---------- GitHub Activity Section ---------- */
+.github-activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.github-activity-header .section-header {
+  margin-bottom: 0;
+}
+
+.github-status {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-hover);
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border-glass);
+}
+
+.status-pulse {
+  width: 6px;
+  height: 6px;
+  background-color: #a3a3a3;
+  border-radius: 50%;
+  position: relative;
+}
+
+[data-theme="light"] .status-pulse {
+  background-color: #525252;
+}
+
+.status-pulse::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  opacity: 0.5;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.status-text b {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.github-chart-container {
+  width: 100%;
+  padding: 0 4px;
+/* ... existing rules ... */
+  background: transparent;
+  border: none;
+  overflow-x: auto; /* Reverting to auto for scrollability */
+  display: block; /* Changing to block to allow natural SVG width and scroll */
+  margin-top: calc(-1 * var(--space-md));
+  -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+}
+
+/* Hide scrollbar but keep functionality for a cleaner look */
+.github-chart-container::-webkit-scrollbar {
+  display: none;
+}
+.github-chart-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* GitHub Calendar Library Overrides */
+.calendar {
+  border: none !important;
+  min-height: auto !important;
+  width: max-content !important; /* Allow it to be wider than container */
+  min-width: 100%;
+  margin: 0 auto; /* Center if it fits */
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+}
+
+/* Hide Stats and Clutter (Aggressive) */
+.calendar .contrib-column, 
+.calendar .contrib-footer,
+.calendar .ContributionGraph-title,
+.calendar .ContributionGraph-label,
+.calendar .sr-only,
+.calendar .js-yearly-contributions h2,
+.calendar .position-relative > .float-right,
+.calendar a[href*="#"] { 
+  display: none !important; 
+}
+
+/* Ensure the graph takes full width correctly */
+.calendar-graph {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: visible !important;
+}
+
+.calendar .width-full > .float-left {
+  display: none; /* Hide 'For more details...' link */
+}
+
+.calendar img.spinner {
+  filter: invert(1);
+}
+
+.calendar .contrib-column {
+  border: none !important;
+}
+
+.calendar .contrib-number {
+  color: var(--text-primary) !important;
+}
+
+.calendar rect.day {
+  fill: var(--bg-hover) !important;
+  shape-rendering: crispedges;
+}
+
+/* Custom coloring for intensity (Monochrome) */
+/* Reset any existing fills from the library */
+.calendar rect.day, .calendar .ContributionGraph-day {
+  fill: var(--bg-secondary) !important;
+  rx: 2;
+  ry: 2;
+  shape-rendering: crispedges;
+}
+
+/* Intensity levels - targeting by the library's intensity classes/fills */
+.calendar [data-level="0"], .calendar [fill="#ebedf0"] { fill: var(--bg-primary) !important; }
+.calendar [data-level="1"], .calendar [fill="#9be9a8"] { fill: #262626 !important; }
+.calendar [data-level="2"], .calendar [fill="#40c463"] { fill: #525252 !important; }
+.calendar [data-level="3"], .calendar [fill="#30a14e"] { fill: #a3a3a3 !important; }
+.calendar [data-level="4"], .calendar [fill="#216e39"] { fill: #fafafa !important; }
+
+[data-theme="light"] .calendar [data-level="0"], [data-theme="light"] .calendar [fill="#ebedf0"] { fill: #f5f5f5 !important; }
+[data-theme="light"] .calendar [data-level="1"], [data-theme="light"] .calendar [fill="#9be9a8"] { fill: #e5e5e5 !important; }
+[data-theme="light"] .calendar [data-level="2"], [data-theme="light"] .calendar [fill="#40c463"] { fill: #a3a3a3 !important; }
+[data-theme="light"] .calendar [data-level="3"], [data-theme="light"] .calendar [fill="#30a14e"] { fill: #525252 !important; }
+[data-theme="light"] .calendar [data-level="4"], [data-theme="light"] .calendar [fill="#216e39"] { fill: #171717 !important; }
+
+/* Handle hover tooltips */
+.calendar .tooltipped::after {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  font-size: 11px !important;
+}
+
+/* Handle different versions of the library/github colors */
+.calendar rect.day[fill="#ffee4a"] { fill: #fafafa !important; }
+.calendar rect.day[fill="#ffc501"] { fill: #a3a3a3 !important; }
+.calendar rect.day[fill="#fe9600"] { fill: #525252 !important; }
+.calendar rect.day[fill="#03001c"] { fill: #262626 !important; }
+
+.calendar-graph text.month, .calendar-graph text.wday {
+  fill: var(--text-muted) !important;
+  font-size: 9px;
+}
+
+/* Rounded squares handled above, removing duplicate/redundant selectors */
+.github-chart-container {
+  position: relative;
+}
+
 /* ---------- Projects Grid Refinement ---------- */
 .pinpeek-pfp {
   width: 100%;
